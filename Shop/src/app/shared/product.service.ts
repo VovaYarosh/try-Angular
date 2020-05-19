@@ -42,4 +42,10 @@ export class ProductService {
           };
       }));
   }
+  remove(id){
+    return this.http.delete(``);
+  }
+  update(product: Product){
+    return this.http.patch(``, product);
+  }
 }
