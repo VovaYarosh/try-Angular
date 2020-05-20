@@ -22,7 +22,7 @@ export class AddPageComponent implements OnInit {
       title: new FormControl(null, Validators.required),
       photo: new FormControl(null, Validators.required),
       info: new FormControl(null, Validators.required),
-      price: new FormControl(null, Validators.required),
+      price: new FormControl(null, Validators.required)
     });
   }
   submit() {
