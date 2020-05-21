@@ -7,8 +7,8 @@ import {ProductService} from '../shared/product.service';
   styleUrls: ['./main-page.component.scss']
 })
 export class MainPageComponent implements OnInit {
-  products$
-  constructor(private productServ: ProductService) { }
+  products$;
+  constructor(public productServ: ProductService) { }
   ngOnInit(): void {
     this.products$ = this.productServ.getAll();
   }

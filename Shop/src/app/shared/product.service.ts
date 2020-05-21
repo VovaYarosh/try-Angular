@@ -8,7 +8,7 @@ import {FbResponse, Product} from './interfaces';
   providedIn: 'root'
 })
 export class ProductService {
-
+  type = 'Phone';
   constructor(private http: HttpClient) { }
   create(product){
     return this.http.post(``, product)
@@ -47,5 +47,9 @@ export class ProductService {
   }
   update(product: Product){
     return this.http.patch(``, product);
+  }
+
+  setType(type){
+    this.type = type;
   }
 }
