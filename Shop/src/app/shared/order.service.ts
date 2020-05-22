@@ -19,20 +19,20 @@ export class OrderService {
         };
       }));
   }
-  // getAll(){
-  //   return this.http.get(``)
-  //     .pipe(map (res => {
-  //       return Object.keys(res)
-  //         .map(key => ({
-  //           ...res[key],
-  //           id: key,
-  //           date: new Date(res[key].date)
-  //         }));
-  //     }));
-  // }
-  //
-  // remove(id){
-  //   return this.http.delete(``);
-  // }
-  //
+  getAll(){
+    return this.http.get(``)
+      .pipe(map (res => {
+        return Object.keys(res)
+          .map(key => ({
+            ...res[key],
+            id: key,
+            date: new Date(res[key].date)
+          }));
+      }));
+  }
+
+  remove(id){
+    return this.http.delete(``);
+  }
+
 }
