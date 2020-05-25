@@ -1,2 +1,9 @@
-<input type="text" [(ngModel)]="title">
+<button (click)="backGroundToggle = !backGroundToggle">toggle</button>
 
+<div [ngStyle]="{
+ width: '200px',
+ height: '200px',
+ borderRadius: '5px',
+ border: '1px solid',
+ background: backGroundToggle ? 'red' : 'yellow'
+}"></div>
