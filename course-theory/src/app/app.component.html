@@ -1,6 +1,8 @@
-<button (click)="toggle = !toggle">toggle</button>
+<button (click)="Toggle = !Toggle">toggle</button>
+<button (click)="Toggle = 111"></button>
 
-<p *ngIf="toggle; else blueP" class="red"> optio quibusdam rem vel?10</p>
-<ng-template #blueP>
-  <p class="blue">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, quam.</p>
-</ng-template>
+<div ngSwitch="Toggle">
+  <p *ngSwitchCase="true" class="red"> Lorem ipsum.</p>
+  <p *ngSwitchCase="false" class="blue">Lorem ipsum.</p>
+  <p *ngSwitchDefault="false" class="blue">Lorem ipsum.</p>
+</div>
