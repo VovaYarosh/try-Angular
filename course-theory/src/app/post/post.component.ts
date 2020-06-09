@@ -1,6 +1,6 @@
 import {
   AfterContentChecked,
-  AfterContentInit, AfterViewChecked, AfterViewInit,
+  AfterContentInit, AfterViewChecked, AfterViewInit, ChangeDetectionStrategy,
   Component,
   ContentChild,
   DoCheck,
@@ -15,7 +15,8 @@ import {Post} from '../app.component';
 @Component({
   selector: 'app-post',
   templateUrl: './post.component.html',
-  styleUrls: ['./post.component.scss']
+  styleUrls: ['./post.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PostComponent implements OnInit, OnChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy {
   @Input() post: Post;
