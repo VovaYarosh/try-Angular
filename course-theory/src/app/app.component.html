@@ -1,16 +1,12 @@
 <div class="container">
-  <h1>Angular directives</h1>
-
-  <p appStyle="red" [dStyles]="{border: '1px solid blue', borderRadius: '5px'}">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, maiores?
+  <h1>Angular pipes</h1>
+  <p>
+    {{ e |  number:'1.1-5'}}
   </p>
-  <p appStyle="blue" [dStyles]="{border: '1px solid yellow', borderRadius: '8px'}">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, maiores?
+  <p>
+  {{ e |  number:'3.1-2'}}
   </p>
-
-  <button class="btn" (click)="isVisible = !isVisible">Toggle</button>
-
-  <div class="wrap" *appIfnot="!isVisible">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, consequuntur nesciunt?</p>
-  </div>
+  <p>
+    {{ e |  number:'1.0-0'}}
+  </p>
 </div>
