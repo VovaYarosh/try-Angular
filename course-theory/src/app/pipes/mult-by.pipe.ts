@@ -4,7 +4,7 @@ import {Pipe, PipeTransform} from '@angular/core';
   name: 'mult'
 })
 export class MultByPipe  implements PipeTransform{
-  transform(num: any, pow: number): number {
+  transform(num: any, pow: number = 2): number {
     return num * pow;
   }
 }
