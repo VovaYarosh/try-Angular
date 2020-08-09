@@ -1,15 +1,12 @@
 <div class="container">
   <h1>Angular pipes</h1>
   <p>
-    {{ float}}
+    {{ 10 | mult}}
   </p>
   <p>
-    {{ float | currency}}
+    {{ 10 | mult:2}}
   </p>
   <p>
-    {{ float | percent : '2.0-0'}}
+    {{ 10 | mult:3}}
   </p>
-  <pre>
-    {{ obj | json}}
-  </pre>
 </div>
