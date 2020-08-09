@@ -17,4 +17,10 @@ export class AppComponent{
     {title: 'JS', text: 'the best leanguage in the world'},
     {title: 'Bread', text: 'the best bread in Ukraine'}
   ];
+  addPost(){
+    this.posts.unshift({
+      title: 'Angilar 8',
+      text: 'Vova norma'
+    });
+  }
 }
