@@ -1,5 +1,8 @@
 <div class="container">
-  <h1>Angular pipes</h1>
-  <p>Wait for it...{{ p | async }}</p>
-  <p>Date: {{ date | async}}</p>
+  <h1>Angular services</h1>
+  <div class="card">
+    {{appCounterService.counter}}
+    <button class="btn" (click)="appCounterService.increase()"></button>
+    <button class="btn" (click)="appCounterService.decrease()"></button>
+  </div>
 </div>
