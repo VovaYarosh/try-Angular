@@ -7,6 +7,6 @@ import {AppCounterService} from './services/app-counter.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent{
-  constructor(private appCounterService: AppCounterService){}
+  constructor(public appCounterService: AppCounterService){}
 
 }
