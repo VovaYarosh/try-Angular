@@ -1,18 +1,47 @@
 <div class="container">
+  <form class="card">
   <h1>Angular services</h1>
-  <div class="card">
-    {{appCounterService.counter}}
-    <button class="btn" (click)="appCounterService.increase()"></button>
-    <button class="btn" (click)="appCounterService.decrease()"></button>
-  </div>
 
-  <div class="card">
-    {{localCounterService.counter}}
-    <button class="btn" (click)="localCounterService.increase()"></button>
-    <button class="btn" (click)="localCounterService.decrease()"></button>
-  </div>
+    <div class="form-control">
+      <label>Email</label>
+      <input type="text" placeholder="Email">
+      <div class="validation"></div>
+    </div>
 
-  <hr>
+    <div class="form-control">
+      <label>Password</label>
+      <input type="text" placeholder="Password">
+      <div class="validation"></div>
+    </div>
 
-  <app-counter></app-counter>
+    <div class="card">
+      <h2>address</h2>
+
+      <div class="form-control">
+        <label>country</label>
+
+        <select>
+          <option value="ua">Ukraine</option>
+          <option value="pl">Poland</option>
+          <option value="us">USA</option>
+        </select>
+      </div>
+
+      <div class="form-control">
+        <input type="text">
+      </div>
+        <button>choose the capital</button>
+      </div>
+
+      <div class="card">
+        <h2>your skills</h2>
+        <button class="btn">add a skill</button>
+        <div class="form-control">
+          <label></label>
+          <input type="text">
+        </div>
+      </div>
+      <button class="btn">send</button>
+
+  </form>
 </div>
