@@ -35,13 +35,13 @@
       </div>
     </div>
 
-    <div class="card">
+    <div class="card" formGroupName="address">
       <h2>address</h2>
 
       <div class="form-control">
         <label>country</label>
 
-        <select>
+        <select formControlName="country">
           <option value="ua">Ukraine</option>
           <option value="pl">Poland</option>
           <option value="us">USA</option>
@@ -49,7 +49,7 @@
       </div>
 
       <div class="form-control">
-        <input type="text">
+        <input type="text" formControlName="city">
       </div>
         <button class="btn" type="button">choose the capital</button>
       </div>
