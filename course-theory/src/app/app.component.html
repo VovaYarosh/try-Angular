@@ -18,6 +18,9 @@
         <small *ngIf="form.get('email').errors.restrictedEmail">
           Email has occupied
         </small>
+        <small *ngIf="form.get('email').errors.uniqEmail">
+          Email has occupied
+        </small>
       </div>
     </div>
 
@@ -69,7 +72,7 @@
           <input type="text" [formControlName]="idx">
         </div>
       </div>
-      <button class="btn" type="submit" [disabled]="form.invalid">send</button>
+      <button class="btn" type="submit" [disabled]="form.invalid || form.pending">send</button>
 
   </form>
 </div>
