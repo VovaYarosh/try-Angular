@@ -18,9 +18,9 @@ export class AppComponent implements OnInit{
         Validators.minLength(6),
         Validators.required
       ]),
-      address: new FormControl({
+      address: new FormGroup({
         country: new FormControl('ua'),
-        city: new FormControl('', Validators.required)
+        city: new FormControl('Kyiv', Validators.required)
       })
     });
   }
@@ -28,5 +28,15 @@ export class AppComponent implements OnInit{
     console.log('Form: ', this.form);
     const formData = {...this.form.value};
     console.log('form data:', formData);
+  }
+  setCapital(){
+    const cityMap = {
+      ua: 'Kyiv',
+      pl: 'Warsaw',
+      us: 'Washington'
+    };
+    const cityKey = this.form.get('address').get('country').value;
+    const city = cityMap[cityKey];
+    this.form.patchValue({address: {city}});
   }
 }
