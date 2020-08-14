@@ -31,6 +31,7 @@ export class AppComponent implements OnInit{
     console.log('Form: ', this.form);
     const formData = {...this.form.value};
     console.log('form data:', formData);
+    this.form.reset();
   }
   setCapital(){
     const cityMap = {
@@ -44,6 +45,6 @@ export class AppComponent implements OnInit{
   }
   addSkill() {
     const control = new FormControl('', Validators.required);
-    (this.form.get('skills') as FormArray).push(control)
+    (this.form.get('skills') as FormArray).push(control);
   }
 }
