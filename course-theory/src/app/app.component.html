@@ -11,12 +11,12 @@
 
   <hr>
 
-  <div class="card">
+  <div class="card" *ngFor="let todo of todos">
     <p>
-      <span class="completed">Name</span>
+      <span [class.completed]="todo.completed">{{todo.title}}</span>
       <span>
         <button class="btn btn-danger">Delete</button>
-        <button class="btn">End</button>
+        <button class="btn" [disabled]="todo.completed">End</button>
       </span>
     </p>
   </div>
