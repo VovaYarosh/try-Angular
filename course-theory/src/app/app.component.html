@@ -1,11 +1,26 @@
 <div class="container">
-  <h1>Angular ngmodels</h1>
-  <app-switch
-    [(ngModel)]="appState"
-    (ngModelChange)="handleChange"
-  >
+  <h1>Angular HttpClient</h1>
 
-  </app-switch>
+  <div class="card">
+    <div class="form-control">
+      <input type="text" placeholder="name">
+    </div>
+    <button class="btn">Add</button>
+    <button class="btn">Upload</button>
+  </div>
+
   <hr>
-  <p>{{appState}}</p>
+
+  <div class="card">
+    <p>
+      <span class="completed">Name</span>
+      <span>
+        <button class="btn btn-danger">Delete</button>
+        <button class="btn">End</button>
+      </span>
+    </p>
+  </div>
 </div>
+
+
+
