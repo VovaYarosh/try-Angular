@@ -12,6 +12,7 @@ export class AppComponent implements OnInit {
   todos: Todo[] = [];
   loading = false;
   todoTitle = '';
+  error = '';
   constructor(private todosService: TodosService){}
   ngOnInit() {
     this.fetchTodos();
@@ -34,6 +35,8 @@ export class AppComponent implements OnInit {
       .subscribe(todos => {
         this.todos = todos;
         this.loading = false;
+      }, error => {
+        this.error = error;
       });
   }
   removeTodo(id: number) {
