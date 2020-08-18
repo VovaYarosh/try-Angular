@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
+import {HttpClient, HttpEventType, HttpHeaders, HttpParams} from '@angular/common/http';
 import {Observable, throwError} from 'rxjs';
-import {catchError, delay} from 'rxjs/operators';
+import {catchError, delay, map, tap} from 'rxjs/operators';
 import {error} from 'selenium-webdriver';
 
 export  interface Todo {
@@ -26,21 +26,39 @@ export class TodosService {
     params = params.append('_limit', '4');
     params = params.append('coustom', 'anything');
     return this.http.get<Todo[]>('https://jsonplaceholder.typicode.com/todos?_limit=2', {
-      params
+      params,
+      observe: 'response'
     })
-      .pipe(delay(500),
+      .pipe(
+        map(response => {
+          return response.body;
+        }),
+        delay(500),
         catchError( error => {
           console.log('error: ', error.message);
           return throwError(error);
         })
         );
   }
-  removeTodo(id: number): Observable<void>{
-    return this.http.delete<void>(`https://jsonplaceholder.typicode.com/todos/${id}`);
+  removeTodo(id: number): Observable<any>{
+    return this.http.delete<void>(`https://jsonplaceholder.typicode.com/todos/${id}`, {
+      observe: 'events'
+    }).pipe(
+      tap(event => {
+        if (event.type === HttpEventType.Sent){
+          console.log(event);
+        }
+        if (event.type === HttpEventType.Response){
+          console.log(event);
+        }
+      })
+    );
   }
   completeTodo(id: number): Observable<Todo>{
     return this.http.put<Todo>(`https://jsonplaceholder.typicode.com/todos/${id}`, {
       completed: true
+    }, {
+      responseType: 'json'
     });
   }
 
