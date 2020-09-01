@@ -11,10 +11,10 @@ export class PostsService {
   }
 
   fetch(): Observable<any[]> {
-    return this.http.get<any[]>(``);
+    return this.http.get<any[]>(``)
   }
 
   remove(id: number): Observable<any> {
-    return this.http.delete<void>(`${id}`);
+    return this.http.delete<void>(`${id}`)
   }
 }
