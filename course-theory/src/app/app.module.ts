@@ -5,6 +5,7 @@ import {AppComponent} from './app.component';
 import {FormsModule} from '@angular/forms';
 import { ModalComponent } from './modal/modal.component';
 import {RefDirective} from './ref.directive';
+import {CounterComponent} from './counter/counter.component';
 
 
 
@@ -12,7 +13,8 @@ import {RefDirective} from './ref.directive';
   declarations: [
     AppComponent,
     ModalComponent,
-    RefDirective
+    RefDirective,
+    CounterComponent
   ],
   imports: [
     BrowserModule,
