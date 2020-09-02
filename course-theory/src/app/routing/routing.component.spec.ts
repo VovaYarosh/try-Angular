@@ -5,6 +5,7 @@ import {Observable, Subject} from 'rxjs';
 import {ActivatedRoute, Params, Router, RouterOutlet} from '@angular/router';
 import {By} from '@angular/platform-browser';
 import {RouterTestingModule} from '@angular/router/testing';
+import {NO_ERRORS_SCHEMA} from '@angular/core';
 
 class RouterStub {
   navigate(path: string[]){}
@@ -31,12 +32,9 @@ describe('RoutingComponent', () => {
         {provide: Router, useClass: RouterStub},
         {provide: ActivatedRoute, useClass: ActivatedRouteStub},
       ],
-      imports: [RouterTestingModule]
+      imports: [RouterTestingModule],
+      schemas: [NO_ERRORS_SCHEMA]
     });
-    fixture.detectChanges();
-  });
-
-  beforeEach(() => {
     fixture = TestBed.createComponent(RoutingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
