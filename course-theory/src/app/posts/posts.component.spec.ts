@@ -29,7 +29,7 @@ describe('PostsComponent', () => {
     const posts = [1, 2, 3];
     spyOn(service, 'fetchPromise').and.returnValue(Promise.resolve(posts));
     fixture.detectChanges();
-    tick()
+    tick();
     expect(component.posts.length).toBe(posts.length);
   }));
 });
