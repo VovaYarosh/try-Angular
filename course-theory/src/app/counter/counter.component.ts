@@ -1,17 +1,17 @@
-import {Component} from "@angular/core";
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-counter',
   templateUrl: './counter.component.html'
 })
 export class CounterComponent {
-  counter = 0
+  counter = 0;
 
   increment() {
-    this.counter++
+    this.counter++;
   }
 
   decrement() {
-    this.counter--
+    this.counter--;
   }
 }

@@ -1,10 +1,18 @@
-import {CounterComponent} from "./counter.component";
+import {ComponentFixture, TestBed} from '@angular/core/Testing';
+import {CounterComponent} from './counter.component';
 
 describe('CounterComponent', () => {
-  let component: CounterComponent
+  let component: CounterComponent;
+  let fixture: ComponentFixture<CounterComponent>;
 
   beforeEach(() => {
-    component = new CounterComponent()
-  })
-
-})
+    TestBed.configureTestingModule({
+      declarations: [CounterComponent]
+    });
+    TestBed.createComponent(CounterComponent);
+    component = fixture.componentInstance;
+  });
+  it('should be created', () => {
+    expect(component).toBeDefined();
+  });
+});
