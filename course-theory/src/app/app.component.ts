@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {animate, group, query, state, style, transition, trigger} from '@angular/animations';
+import {animate, group, keyframes, query, state, style, transition, trigger} from '@angular/animations';
 
 
 @Component({
@@ -33,8 +33,14 @@ import {animate, group, query, state, style, transition, trigger} from '@angular
         ])
       ]),
       transition(':enter', [
-        style( {opacity: 0}),
-        animate('850ms ease-out')
+        animate('4s', keyframes([
+          style({background: 'red', offset: 0}),
+          style({background: 'yellow', offset: 0.2}),
+          style({background: 'blue', offset: 0.3}),
+          style({background: 'green', offset: 1}),
+        ]))
+        // style( {opacity: 0}),
+        // animate('850ms ease-out')
       ]),
       transition( ':leave', [
         style({opacity: 1}),
