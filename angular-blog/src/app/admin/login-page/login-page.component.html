@@ -6,7 +6,7 @@
     [ngClass]="{invalid: form.get('email').touched && form.get('email').invalid}"
   >
     <label for="email">Email:</label>
-    <input id="email" type="email">
+    <input id="email" type="email" formControlName="email">
     <div
       *ngIf="form.get('email').touched && form.get('email').invalid"
       class="validation"
@@ -25,13 +25,20 @@
     [ngClass]="{invalid: form.get('email').touched && form.get('email').invalid}"
   >
     <label for="password">Password:</label>
-    <input id="password" type="password">
+    <input id="password" type="password" formControlName="password">
     <div
       *ngIf="form.get('email').touched && form.get('email').invalid"
       class="validation"
     >
-      <small >
-
+      <small *ngIf="form.get('password').errors.required">
+        enter the password
+      </small>
+      <small *ngIf="form.get('password').errors.minlength">
+        password must be
+        {{form.get('password').errors.minlength.requiredLength}}
+        characters.
+        now
+        {{form.get('password').errors.minlength.actualLength}}
       </small>
     </div>
   </div>
@@ -43,4 +50,5 @@
   >
 
   </button>
+  <!--[disabled]="form.invalid"-->
 </form>
