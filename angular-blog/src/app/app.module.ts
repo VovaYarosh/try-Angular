@@ -15,7 +15,7 @@ const INTERCEPTOR_PROVIDER: Provider = {
   provide: HTTP_INTERCEPTORS,
   multi: true,
   useClass: AuthInterceptor
-}
+};
 
 @NgModule({
   declarations: [
