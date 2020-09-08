@@ -1,5 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Post} from '../../interfaces';
+import {Observable} from 'rxjs';
+
 
 @Component({
   selector: 'app-post',
@@ -7,10 +9,12 @@ import {Post} from '../../interfaces';
   styleUrls: ['./post.component.scss']
 })
 export class PostComponent implements OnInit {
-  @Input() post: Post
-  constructor() { }
+  post$: Observable<Post>;
+  @Input() post: Post;
+  constructor(
+  ) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
   }
 
 }
