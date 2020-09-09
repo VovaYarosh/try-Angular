@@ -5,7 +5,7 @@ function logInfo(name: string, age: number): void{
 logInfo('Vova',25);
 
 function calc(a: number, b: number | string): number{
-    if(typeof b = 'string') b = +b;
+    if(typeof b == 'string') b = +b;
     return a + b
 }
-calc(2,5)
+calc(2,5);
